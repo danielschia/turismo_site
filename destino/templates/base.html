@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Turismo{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Turismo em Bonito</h1>
+        <nav>
+            <a href="{% url 'home' %}">Início</a>
+            <a href="{% url 'atracoes' %}">Atrações</a>
+            <a href="{% url 'historia' %}">História & Cultura</a>
+            <a href="{% url 'galeria' %}">Galeria</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 Turismo em Bonito</p>
+    </footer>
+</body>
+</html>
